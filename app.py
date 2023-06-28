@@ -21,21 +21,8 @@ response = getReq(devURL, devToken, reqID)
 ticketDat=response.json()
 oldReq=ticketDat.get("request")'''
 
+
 input_data={
-    "request":{
-        "resolution":{
-            "content":"This is automatic"
-        },
-        "subject":oldReq.get('subject'),
-        "description":"Test description",
-        "requester":oldReq.get('requester'),
-        "template":{
-            "name":"test"
-        },
-        "udf_fields":oldReq.get('udf_fields')
-    }
-}
-devDat={
     "request":{
         "template":{
             "name":"vietpd temp"
@@ -48,10 +35,10 @@ devDat={
         "udf_fields":oldReq.get('udf_fields')
     }
 }
-input_data='%s' % input_data
+#input_data='%s' % input_data
 
 
-makeNewReq=newReq(devURL, devToken, {'input_data':str(devDat)})
+makeNewReq=newReq(devURL, devToken, {'input_data':str(input_data)})
 print(makeNewReq.status_code)
 newReq=makeNewReq.json()
 if (newReq.get('response_status').get('status_code') == 2000):
