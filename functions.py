@@ -1,5 +1,11 @@
 import requests
 
+def isSuccess(r):
+    statusCode=r.json().get('response_status').get('status_code')
+    if(statusCode==2000):
+        return True
+    else: return False
+
 def linkReq(host, token, oldID, newID):
     input_data={
         "link_requests":[{
@@ -11,7 +17,7 @@ def linkReq(host, token, oldID, newID):
     url = host+"/api/v3/requests/"+str(oldID)+"/link_requests"
     headers = {"authtoken":token}
     with requests.Session() as s:
-        return s.post(url, headers, data={"input_data":str(input_data)}, verify=False)
+        return s.post(url, headers=headers, data={"input_data":str(input_data)}, verify=False)
 
 
 def getReq(host, token, id):
