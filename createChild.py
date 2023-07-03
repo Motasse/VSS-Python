@@ -24,11 +24,12 @@ ticketDat=r.json()
 oldReq=ticketDat.get("request")
 newSubject=oldReq.get('subject').replace("Tiếp nhận", "Xử lý")
 newDes=oldReq.get('description').replace("Tiếp nhận", "Xử lý")
+templateName="vietpd temp"
 
 input_data={
     "request":{
         "template":{
-            "name":"vietpd temp"
+            "name":templateName
         },
         "subject":newSubject,
         "description":newDes,
