@@ -1,0 +1,1 @@
+<uid-message><version>1.0</version><type>update</type><payload><register-user><entry user="testvpn@langson.vss.gov.vn"><tag><member>NAC_ACTIVE_SS</member></tag></entry></register-user></payload></uid-message>
