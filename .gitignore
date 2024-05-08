@@ -2,4 +2,5 @@
 /__pycache__
 /payload.txt
 /PulseSec_autoBlock.py
+/PulseSec_users.py
 /AlertEmail.py
